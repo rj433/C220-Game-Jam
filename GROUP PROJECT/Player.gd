@@ -32,7 +32,6 @@ func _on_keydoor1_body_entered(_body):
 	get_tree().change_scene("res://Keyroom1.tscn")
 
 
-<<<<<<< HEAD
 func _on_Area2D_body_entered(_body):
 	get_tree().change_scene("res://Keyroom2.tscn")
 
@@ -80,5 +79,4 @@ func _on_finaldoor_body_entered(body):
 
 func _on_leveldoor3_body_entered(body):
 	get_tree().change_scene("res://Bossroom.tscn")
-=======
->>>>>>> 8941f458b4db2c1e6485ad029b9df709a6a3016f
+
