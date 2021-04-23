@@ -19,6 +19,11 @@ config/name="Group Project"
 run/main_scene="res://Level1.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=1348
+window/size/height=712
+
 [input]
 
 jump={
