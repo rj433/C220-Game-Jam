@@ -1,9 +1,8 @@
 extends KinematicBody2D
 
-export var constraint_left = Vector2(1640,290)
-export var constraint_right = Vector2(1870,290)
-export var speed = 3
-
+export var constraint_left = Vector2(1353,358)
+export var constraint_right = Vector2(2348,358)
+export var speed = 5
 onready var _animated_sprite = $AnimatedSprite
 
 
@@ -21,10 +20,16 @@ func _physics_process(_delta):
 		$Tween.start()
 
 
-
-func _on_Area2D_body_entered(body):
+func _on_Boss_area_body_entered(body):
 	if body.name == "Player":
 		body.queue_free()
 		get_tree().reload_current_scene()
-			
-		
+
+
+func _on_Boss_area2_body_entered(body):
+	if body.name == "Player":
+		_animated_sprite.play("Attack")
+
+
+func _on_Boss_area2_body_exited(body):
+	_animated_sprite.play("Walk")

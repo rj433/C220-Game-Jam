@@ -24,8 +24,35 @@ func _physics_process(_delta):
 
 	
 
-func _on_fallzone_body_entered(_body):
+
+
+func _on_fallzone_body_entered(body):
+
 	get_tree().change_scene("res://Level1.tscn")
+=======
+func _on_backdoor1_body_entered(body):
+	get_tree().change_scene("res://Level1.tscn")
+
+
+func _on_backdoor2_body_entered(body):
+	get_tree().change_scene("res://Level2.tscn")
+
+
+func _on_backdoor3_body_entered(body):
+	get_tree().change_scene("res://Level3.tscn")
+
+
+func _on_keydoor3_body_entered(body):
+	get_tree().change_scene("res://Keyroom3.tscn")
+
+
+func _on_goback1_body_entered(body):
+	get_tree().change_scene("res://Level3.tscn")
+
+
+
+func _on_goback2_body_entered(body):
+	get_tree().change_scene("res://Bossroom.tscn")
 
 
 func _on_keydoor1_body_entered(_body):
