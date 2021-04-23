@@ -2,8 +2,7 @@ extends KinematicBody2D
 
 export var constraint_left = Vector2(1640,290)
 export var constraint_right = Vector2(1870,290)
-export var speed = 3
-
+export var speed = 5
 onready var _animated_sprite = $AnimatedSprite
 
 
