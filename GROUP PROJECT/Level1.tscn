@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_093.png" type="Texture" id=2]
@@ -160,6 +160,9 @@ extents = Vector2( 2256.51, 114.952 )
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 5.57971, 27.8329 )
 
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 6.99463, 35.9352 )
+
 [node name="Level1" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
@@ -193,5 +196,16 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="keydoor1"]
 shape = SubResource( 9 )
+
+[node name="leveldoor1" type="Area2D" parent="."]
+position = Vector2( 3127.09, -38.0237 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leveldoor1"]
+position = Vector2( -1.43457, -0.490662 )
+shape = SubResource( 10 )
 [connection signal="body_entered" from="fallzone" to="Player" method="_on_fallzone_body_entered"]
 [connection signal="body_entered" from="keydoor1" to="Player" method="_on_keydoor1_body_entered"]
+[connection signal="body_entered" from="leveldoor1" to="Player" method="_on_leveldoor1_body_entered"]
