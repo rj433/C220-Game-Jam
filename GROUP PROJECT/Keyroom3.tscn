@@ -1,11 +1,13 @@
 [gd_scene load_steps=12 format=2]
 
+
 [ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_042.png" type="Texture" id=1]
 [ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_061.png" type="Texture" id=2]
 [ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_045.png" type="Texture" id=3]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Background.jpg" type="Texture" id=5]
 [ext_resource path="res://assets/Music/Ghost's theme.ogg" type="AudioStream" id=6]
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 75, 0, 75, 76, 0, 76 )
@@ -99,6 +101,7 @@ position = Vector2( 273.881, 534.292 )
 stream = ExtResource( 6 )
 volume_db = -15.0
 autoplay = true
+
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 4 )

@@ -5,6 +5,8 @@ const SPEED = 300
 const GRAVITY = 30
 const JUMPFORCE = -900
 
+
+
 func _physics_process(_delta):
 	if Input.is_action_pressed("right"):
 		velocity.x = SPEED
@@ -20,10 +22,12 @@ func _physics_process(_delta):
 		
 	velocity.x = lerp(velocity.x,0,0.2)
 
+	
 
-<<<<<<< Updated upstream
+
 
 func _on_fallzone_body_entered(body):
+
 	get_tree().change_scene("res://Level1.tscn")
 =======
 func _on_backdoor1_body_entered(body):
@@ -49,8 +53,57 @@ func _on_goback1_body_entered(body):
 
 func _on_goback2_body_entered(body):
 	get_tree().change_scene("res://Bossroom.tscn")
->>>>>>> Stashed changes
 
 
-func _on_keydoor1_body_entered(body):
+func _on_keydoor1_body_entered(_body):
 	get_tree().change_scene("res://Keyroom1.tscn")
+
+
+func _on_Area2D_body_entered(_body):
+	get_tree().change_scene("res://Keyroom2.tscn")
+
+
+func _on_fallzone2_body_entered(_body):
+	get_tree().change_scene("res://Level1.tscn")
+
+
+func _on_leveldoor1_body_entered(_body):
+	get_tree().change_scene("res://Level2.tscn")
+
+
+func _on_leveldoor2_body_entered(body):
+	get_tree().change_scene("res://Level3.tscn")
+
+
+func _on_backdoor1_body_entered(body):
+	get_tree().change_scene("res://Level1.tscn")
+
+
+func _on_backdoor2_body_entered(body):
+	get_tree().change_scene("res://Level1.tscn")
+
+
+func _on_backdoor3_body_entered(body):
+	get_tree().change_scene("res://Level1.tscn")
+
+
+func _on_keydoor3_body_entered(body):
+	get_tree().change_scene("res://Keyroom3.tscn")
+
+
+func _on_goback1_body_entered(body):
+	get_tree().change_scene("res://Level1.tscn")
+
+
+
+func _on_goback2_body_entered(body):
+	get_tree().change_scene("res://Level1.tscn")
+
+
+func _on_finaldoor_body_entered(body):
+	get_tree().change_scene("res://Final Room.tscn")
+
+
+func _on_leveldoor3_body_entered(body):
+	get_tree().change_scene("res://Bossroom.tscn")
+
