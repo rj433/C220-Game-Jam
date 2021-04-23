@@ -1,4 +1,12 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=17 format=2]
+=======
+<<<<<<< HEAD
+[gd_scene load_steps=21 format=2]
+=======
+[gd_scene load_steps=19 format=2]
+>>>>>>> 77033ec09e835a27ba47f96e210aa72a84361dbb
+>>>>>>> Stashed changes
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_093.png" type="Texture" id=2]
@@ -7,6 +15,13 @@
 [ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_068.png" type="Texture" id=5]
 [ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_085.png" type="Texture" id=6]
 [ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_065.png" type="Texture" id=7]
+<<<<<<< HEAD
+[ext_resource path="res://Enemies/Enemy1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Background.jpg" type="Texture" id=9]
+[ext_resource path="res://assets/Music/level 1.ogg" type="AudioStream" id=10]
+=======
+[ext_resource path="res://Player/StateMachine/Player_Container.gd" type="Script" id=8]
+>>>>>>> 77033ec09e835a27ba47f96e210aa72a84361dbb
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 71, 0, 71, 66, 0, 66 )
@@ -162,6 +177,18 @@ extents = Vector2( 5.57971, 27.8329 )
 
 [node name="Level1" type="Node2D"]
 
+<<<<<<< HEAD
+[node name="Background" type="Sprite" parent="."]
+modulate = Color( 0.572549, 0.270588, 0.270588, 1 )
+self_modulate = Color( 0.45098, 0.0117647, 0.0117647, 1 )
+position = Vector2( 1761.77, 90.7691 )
+scale = Vector2( 1.36446, 1 )
+texture = ExtResource( 9 )
+=======
+[node name="Player Container" type="Node2D" parent="."]
+script = ExtResource( 8 )
+>>>>>>> 77033ec09e835a27ba47f96e210aa72a84361dbb
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 518.584, 181.186 )
 
@@ -169,6 +196,12 @@ position = Vector2( 518.584, 181.186 )
 current = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
+position = Vector2( -518.584, -181.186 )
+stream = ExtResource( 10 )
+volume_db = -15.0
+autoplay = true
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 7 )
@@ -193,5 +226,24 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="keydoor1"]
 shape = SubResource( 9 )
+<<<<<<< Updated upstream
+=======
+
+[node name="leveldoor1" type="Area2D" parent="."]
+position = Vector2( 3127.09, -38.0237 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leveldoor1"]
+position = Vector2( -1.43457, -0.490662 )
+shape = SubResource( 10 )
+
+[node name="Enemy" parent="." instance=ExtResource( 8 )]
+position = Vector2( -4.49487, -11.9865 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 818.075, 241.227 )
+>>>>>>> Stashed changes
 [connection signal="body_entered" from="fallzone" to="Player" method="_on_fallzone_body_entered"]
 [connection signal="body_entered" from="keydoor1" to="Player" method="_on_keydoor1_body_entered"]

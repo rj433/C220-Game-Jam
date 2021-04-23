@@ -1,38 +1,27 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=7 format=2]
-=======
 [gd_scene load_steps=12 format=2]
->>>>>>> Stashed changes
 
-[ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_019.png" type="Texture" id=1]
-[ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_065.png" type="Texture" id=2]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
-<<<<<<< Updated upstream
-=======
-[ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_061.png" type="Texture" id=4]
+[ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_042.png" type="Texture" id=1]
+[ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_061.png" type="Texture" id=2]
+[ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_045.png" type="Texture" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Background.jpg" type="Texture" id=5]
 [ext_resource path="res://assets/Music/Ghost's theme.ogg" type="AudioStream" id=6]
->>>>>>> Stashed changes
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
-points = PoolVector2Array( 0, 0, 73, 0, 73, 85, 0, 85 )
+points = PoolVector2Array( 0, 0, 75, 0, 75, 76, 0, 76 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
-points = PoolVector2Array( 0, 0, 72, 0, 72, 82, 0, 82 )
+points = PoolVector2Array( 0, 0, 75, 0, 75, 91, 0, 91 )
 
-<<<<<<< Updated upstream
-[sub_resource type="TileSet" id=3]
-=======
 [sub_resource type="ConvexPolygonShape2D" id=3]
-points = PoolVector2Array( 0, 0, 76, 0, 76, 83, 0, 83 )
+points = PoolVector2Array( 0, 0, 72, 0, 72, 88, 0, 88 )
 
 [sub_resource type="TileSet" id=4]
->>>>>>> Stashed changes
-0/name = "medievalTile_019.png 0"
+0/name = "medievalTile_042.png 0"
 0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( -1, -1, 73, 85 )
+0/region = Rect2( -1, -5, 75, 76 )
 0/tile_mode = 0
 0/occluder_offset = Vector2( 0, 0 )
 0/navigation_offset = Vector2( 0, 0 )
@@ -49,11 +38,11 @@ points = PoolVector2Array( 0, 0, 76, 0, 76, 83, 0, 83 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
-1/name = "medievalTile_065.png 1"
-1/texture = ExtResource( 2 )
+1/name = "medievalTile_045.png 1"
+1/texture = ExtResource( 3 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 0, -2, 72, 82 )
+1/region = Rect2( -2, -4, 75, 91 )
 1/tile_mode = 0
 1/occluder_offset = Vector2( 0, 0 )
 1/navigation_offset = Vector2( 0, 0 )
@@ -70,13 +59,11 @@ points = PoolVector2Array( 0, 0, 76, 0, 76, 83, 0, 83 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 1/z_index = 0
-<<<<<<< Updated upstream
-=======
 2/name = "medievalTile_061.png 2"
-2/texture = ExtResource( 4 )
+2/texture = ExtResource( 2 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( -3, -1, 76, 83 )
+2/region = Rect2( 0, -3, 72, 88 )
 2/tile_mode = 0
 2/occluder_offset = Vector2( 0, 0 )
 2/navigation_offset = Vector2( 0, 0 )
@@ -95,19 +82,18 @@ points = PoolVector2Array( 0, 0, 76, 0, 76, 83, 0, 83 )
 2/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 4.8385, 33.9929 )
->>>>>>> Stashed changes
+extents = Vector2( 2.29228, 33.7157 )
 
-[node name="Keyroom1" type="Node2D"]
+[node name="Keyroom3" type="Node2D"]
 
 [node name="Background" type="Sprite" parent="."]
 modulate = Color( 0.572549, 0.270588, 0.270588, 1 )
 self_modulate = Color( 0.45098, 0.0117647, 0.0117647, 1 )
-position = Vector2( 625.083, 469.519 )
+position = Vector2( 691.58, 403.577 )
 texture = ExtResource( 5 )
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1110.32, 491.591 )
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 273.881, 534.292 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource( 6 )
@@ -117,4 +103,14 @@ autoplay = true
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 4 )
 format = 1
-tile_data = PoolIntArray( 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0, 196625, 0, 0, 196626, 0, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 262157, 1, 0, 262158, 1, 0, 262159, 1, 0, 262160, 1, 0, 262161, 1, 0, 262162, 1, 0, 327681, 1, 0, 327698, 1, 0, 393217, 1, 0, 393234, 1, 0, 458753, 1, 0, 458770, 1, 0, 524289, 1, 0, 524306, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589831, 1, 0, 589832, 1, 0, 589833, 1, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 589842, 1, 0 )
+tile_data = PoolIntArray( 262145, 0, 0, 262163, 0, 0, 327681, 0, 0, 327699, 0, 0, 393217, 0, 0, 393235, 0, 0, 458753, 0, 0, 458771, 0, 0, 524289, 2, 0, 524296, -1610612735, 0, 524297, -1610612735, 0, 524298, -1610612735, 0, 524299, -1610612735, 0, 524300, -1610612735, 0, 524307, 0, 0, 589825, -1610612735, 0, 589826, -1073741823, 0, 589827, -1073741823, 0, 589828, -1073741823, 0, 589829, -1073741823, 0, 589830, -1610612735, 0, 589831, -1610612735, 0, 589832, -1610612735, 0, 589833, -1610612735, 0, 589834, -1610612735, 0, 589835, -1610612735, 0, 589836, -1610612735, 0, 589837, -1610612735, 0, 589838, -1610612735, 0, 589839, -1610612735, 0, 589840, -1610612735, 0, 589841, -1610612735, 0, 589842, -1610612735, 0, 589843, 0, 0 )
+
+[node name="backdoor3" type="Area2D" parent="."]
+position = Vector2( 144.379, 541.044 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="backdoor3"]
+shape = SubResource( 5 )
+[connection signal="body_entered" from="backdoor3" to="Player" method="_on_backdoor3_body_entered"]
