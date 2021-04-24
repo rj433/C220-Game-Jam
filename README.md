@@ -30,11 +30,11 @@ Assets collecting, Dialogue writing, and other aesthetic implementations by Haye
 ## Future Development
 
 # Created by: Group Name
--Ryan Janoski 
+## -Ryan Janoski 
   -Music, enemies, dialogue window/coding, and boss
--Jalen Slutzky 
+## -Jalen Slutzky 
   -Level design, character development 
--Kraig Foster 
+## -Kraig Foster 
   -character development/ coding
--Hayes Snider 
+## -Hayes Snider 
   -Assets collecting, dialogue writing, and other aesthetic implementations 
