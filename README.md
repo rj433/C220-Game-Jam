@@ -16,14 +16,23 @@ Character design by Kraig Foster
 Assets collecting, Dialogue writing, and other aesthetic implementations by Hayes Snider
   -Assets used 
    -https://opengameart.org/content/gui-dialoguemenu-box (used for dialogue box background)
+   
    -https://fonts.google.com/specimen/Roboto (used for font for dialogue box)
+   
    -https://opengameart.org/content/dungeon-door (used for locked door)
+   
    -https://opengameart.org/content/hero-spritesheets-ars-notoria ( used for main character and npc armor)
+   
    -https://opengameart.org/content/monster-sprite (used for final boss) 
+   
    -https://kenney.nl/assets/simplified-platformer-pack (used for marker for dialogue, and for keys) 
+   
    -https://kenney.nl/assets/platformer-pack-medieval (used for platforms and level design) 
+   
    -https://opengameart.org/content/lpc-imp (Used for the enemies)
+   
    -https://wallpaperaccess.com/black-brick (used for background)
+   
    -ALL MUSIC PIECES INCLUDED ARE ORIGINAL PIECES MADE BY RYAN JANOSKI
 ## References
 
