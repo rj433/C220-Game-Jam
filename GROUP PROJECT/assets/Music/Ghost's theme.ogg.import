@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ghost's theme.ogg-35ca7bd88a92c8e05272bac71cda95f7.oggstr"
+
+[deps]
+
+source_file="res://assets/Music/Ghost's theme.ogg"
+dest_files=[ "res://.import/Ghost's theme.ogg-35ca7bd88a92c8e05272bac71cda95f7.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

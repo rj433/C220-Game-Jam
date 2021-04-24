@@ -1,12 +1,16 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=38 format=2]
 
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/player/player-spritemap-v9-greenpants.png" type="Texture" id=1]
 [ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_093.png" type="Texture" id=2]
 [ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_067.png" type="Texture" id=3]
 [ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_066.png" type="Texture" id=4]
 [ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_068.png" type="Texture" id=5]
 [ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_085.png" type="Texture" id=6]
 [ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_065.png" type="Texture" id=7]
+[ext_resource path="res://Player/Player1.gd" type="Script" id=8]
+[ext_resource path="res://Background.jpg" type="Texture" id=9]
+[ext_resource path="res://Enemies/Enemy1.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/Music/level 1.ogg" type="AudioStream" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 71, 0, 71, 66, 0, 66 )
@@ -163,7 +167,110 @@ extents = Vector2( 5.57971, 27.8329 )
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 6.99463, 35.9352 )
 
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 230, 0, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 276, 0, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 100, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 46, 100, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 46, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 92, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 138, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 184, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 230, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 276, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 322, 150, 46, 50 )
+
+[sub_resource type="SpriteFrames" id=30]
+animations = [ {
+"frames": [ SubResource( 27 ), SubResource( 16 ) ],
+"loop": true,
+"name": "Stand",
+"speed": 2.0
+}, {
+"frames": [ SubResource( 17 ), SubResource( 18 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 19 ), SubResource( 20 ) ],
+"loop": true,
+"name": "Fall",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 28 ), SubResource( 29 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 25, 25 )
+
 [node name="Level1" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.572549, 0.270588, 0.270588, 1 )
+self_modulate = Color( 0.45098, 0.0117647, 0.0117647, 1 )
+position = Vector2( 1703.58, -14.9831 )
+scale = Vector2( 1.56636, 1 )
+texture = ExtResource( 9 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 7 )
@@ -190,7 +297,7 @@ __meta__ = {
 shape = SubResource( 9 )
 
 [node name="leveldoor1" type="Area2D" parent="."]
-position = Vector2( 3127.09, -38.0237 )
+position = Vector2( 3109.06, -36.6095 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -199,5 +306,33 @@ __meta__ = {
 position = Vector2( -1.43457, -0.490662 )
 shape = SubResource( 10 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 361.519, 277.085 )
+[node name="Player1" type="KinematicBody2D" parent="."]
+position = Vector2( 432.977, 288.651 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player1"]
+frames = SubResource( 30 )
+animation = "Stand"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
+shape = SubResource( 31 )
+
+[node name="Camera2D" type="Camera2D" parent="Player1"]
+current = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player1"]
+position = Vector2( -432.977, -288.651 )
+stream = ExtResource( 11 )
+volume_db = -15.0
+autoplay = true
+
+[node name="Enemy" parent="." instance=ExtResource( 10 )]
+position = Vector2( -14.881, -15.8899 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 827.055, 244.619 )
+[connection signal="body_entered" from="keydoor1" to="Player1" method="_on_keydoor1_body_entered"]
+[connection signal="body_entered" from="leveldoor1" to="Player1" method="_on_leveldoor1_body_entered"]

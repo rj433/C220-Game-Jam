@@ -1,11 +1,18 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_068.png" type="Texture" id=1]
 [ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_041.png" type="Texture" id=2]
 [ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_085.png" type="Texture" id=3]
 [ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_187.png" type="Texture" id=4]
 [ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_045.png" type="Texture" id=5]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/player/player-spritemap-v9-greenpants.png" type="Texture" id=6]
+[ext_resource path="res://Player/Player1.gd" type="Script" id=7]
+[ext_resource path="res://Background.jpg" type="Texture" id=8]
+[ext_resource path="res://assets/Enemy/horror idle.png" type="Texture" id=9]
+[ext_resource path="res://assets/Enemy/horror attack.png" type="Texture" id=10]
+[ext_resource path="res://assets/Enemy/horror walk.png" type="Texture" id=11]
+[ext_resource path="res://Enemies/Boss.gd" type="Script" id=12]
+[ext_resource path="res://assets/Music/boss music.ogg" type="AudioStream" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 78, 0, 78, 88, 0, 88 )
@@ -125,21 +132,232 @@ extents = Vector2( 4.86281, 42.5781 )
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 4.59204, 40.0984 )
 
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 230, 0, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 276, 0, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 100, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 46, 100, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 46, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 92, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 138, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 184, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 230, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 276, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 322, 150, 46, 50 )
+
+[sub_resource type="SpriteFrames" id=30]
+animations = [ {
+"frames": [ SubResource( 27 ), SubResource( 16 ) ],
+"loop": true,
+"name": "Stand",
+"speed": 2.0
+}, {
+"frames": [ SubResource( 17 ), SubResource( 18 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 19 ), SubResource( 20 ) ],
+"loop": true,
+"name": "Fall",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 28 ), SubResource( 29 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 25, 25 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 160, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 320, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 480, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 640, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=37]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 800, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=38]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=39]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 160, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=40]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 320, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=41]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 480, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=42]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 640, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=43]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=44]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 160, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=45]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 320, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=46]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 480, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=47]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 640, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=48]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 800, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=49]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 960, 0, 160, 160 )
+
+[sub_resource type="SpriteFrames" id=50]
+animations = [ {
+"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ) ],
+"loop": true,
+"name": "Idle ",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 3.0
+}, {
+"frames": [ SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=51]
+extents = Vector2( 100, 100 )
+
+[sub_resource type="RectangleShape2D" id=52]
+extents = Vector2( 100, 100 )
+
+[sub_resource type="RayShape2D" id=53]
+length = 175.0
+
 [node name="Bossroom" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource( 6 )]
-position = Vector2( 260.162, 395.854 )
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( 0.77034, 0.544678 )
-current = true
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.572549, 0.270588, 0.270588, 1 )
+self_modulate = Color( 0.45098, 0.0117647, 0.0117647, 1 )
+position = Vector2( 1339.43, 227.823 )
+scale = Vector2( 1.65064, 1.15977 )
+texture = ExtResource( 8 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 5 )
 format = 1
-tile_data = PoolIntArray( -131054, 1610612739, 0, -131053, 1610612739, 0, -131052, 1610612739, 0, -131051, 1610612739, 0, -131050, 1610612739, 0, -131049, 1610612739, 0, -131048, 1610612739, 0, -131047, 1610612739, 0, -131046, 1610612739, 0, -131045, 1610612739, 0, -131044, 1610612739, 0, -131043, 1610612739, 0, -131042, 1610612739, 0, -131041, 1610612739, 0, -131040, 1610612739, 0, -131039, 1610612739, 0, -131038, 1610612739, 0, -131037, 1610612739, 0, -131036, 1610612739, 0, -131035, 1610612739, 0, -131034, 1610612739, 0, -65518, 1610612739, 0, -65498, 1610612739, 0, -65497, 1610612739, 0, 18, 1610612739, 0, 39, 1610612739, 0, 65554, 1610612739, 0, 65575, 1610612739, 0, 131090, -1610612735, 0, 131111, 1610612739, 0, 196609, 1, 0, 196610, 1610612739, 0, 196611, 1610612739, 0, 196612, 1610612739, 0, 196613, 1610612739, 0, 196614, 1610612739, 0, 196615, 1610612739, 0, 196616, 1610612739, 0, 196617, 1610612739, 0, 196618, 1610612739, 0, 196619, 1610612739, 0, 196620, 1610612739, 0, 196621, 1610612739, 0, 196622, 1610612739, 0, 196623, 1610612739, 0, 196624, 1610612739, 0, 196625, 1610612739, 0, 196626, -1610612735, 0, 196647, 1610612739, 0, 196648, -1073741823, 0, 196649, -1073741823, 0, 196650, 1, 0, 262145, 1, 0, 262149, 1610612740, 0, 262151, 1610612740, 0, 262153, 1610612740, 0, 262155, 1610612740, 0, 262157, 1610612740, 0, 262159, 1610612740, 0, 262161, 1610612740, 0, 262186, 1, 0, 327681, 1, 0, 327722, 1, 0, 393217, 0, 0, 393258, 0, 0, 458753, -1610612734, 0, 458754, -1610612734, 0, 458755, -1610612734, 0, 458756, -1610612734, 0, 458757, -1610612734, 0, 458758, -1610612734, 0, 458759, -1610612734, 0, 458760, -1610612734, 0, 458761, -1610612734, 0, 458762, -1610612734, 0, 458763, -1610612734, 0, 458764, -1610612734, 0, 458765, -1610612734, 0, 458766, -1610612734, 0, 458767, -1610612734, 0, 458768, -1610612734, 0, 458769, -1610612734, 0, 458770, -1610612734, 0, 458771, -1073741822, 0, 458772, -1073741822, 0, 458773, -1073741822, 0, 458774, -1073741822, 0, 458775, -1073741822, 0, 458776, -1073741822, 0, 458777, -1073741822, 0, 458778, -1073741822, 0, 458779, -1073741822, 0, 458780, -1073741822, 0, 458781, -1073741822, 0, 458782, -1073741822, 0, 458783, -1073741822, 0, 458784, -1073741822, 0, 458785, -1073741822, 0, 458786, -1073741822, 0, 458787, -1073741822, 0, 458788, -1073741822, 0, 458789, -1073741822, 0, 458790, -1073741822, 0, 458791, -1073741822, 0, 458792, -1073741822, 0, 458793, -1073741822, 0, 458794, -1610612734, 0 )
+tile_data = PoolIntArray( -262125, 3, 0, -262124, 3, 0, -262123, 3, 0, -262122, 3, 0, -262121, 3, 0, -262120, 3, 0, -262119, 3, 0, -262118, 3, 0, -262117, 3, 0, -262116, 3, 0, -262115, 3, 0, -262114, 3, 0, -262113, 3, 0, -262112, 3, 0, -262111, 3, 0, -262110, 3, 0, -262109, 3, 0, -262108, 3, 0, -262107, 3, 0, -196590, 3, 0, -196571, 3, 0, -196570, 3, 0, -131054, 1610612739, 0, -131034, 1610612739, 0, -65518, 1610612739, 0, -65498, 1610612739, 0, -65497, 1610612739, 0, 18, 1610612739, 0, 39, 1610612739, 0, 65554, 1610612739, 0, 65558, 1, 0, 65559, 1, 0, 65562, 1, 0, 65563, 1, 0, 65566, 1, 0, 65567, 1, 0, 65569, 1, 0, 65570, 1, 0, 65575, 1610612739, 0, 131090, -1610612735, 0, 131108, 1, 0, 131111, 1610612739, 0, 196609, 1, 0, 196610, 1610612739, 0, 196611, 1610612739, 0, 196612, 1610612739, 0, 196613, 1610612739, 0, 196614, 1610612739, 0, 196615, 1610612739, 0, 196616, 1610612739, 0, 196617, 1610612739, 0, 196618, 1610612739, 0, 196619, 1610612739, 0, 196620, 1610612739, 0, 196621, 1610612739, 0, 196622, 1610612739, 0, 196623, 1610612739, 0, 196624, 1610612739, 0, 196625, 1610612739, 0, 196626, -1610612735, 0, 196628, 1, 0, 196647, 1610612739, 0, 196648, -1073741823, 0, 196649, -1073741823, 0, 196650, 1, 0, 262145, 1, 0, 262149, 1610612740, 0, 262151, 1610612740, 0, 262153, 1610612740, 0, 262155, 1610612740, 0, 262157, 1610612740, 0, 262159, 1610612740, 0, 262161, 1610612740, 0, 262186, 1, 0, 327681, 1, 0, 327722, 1, 0, 393217, 0, 0, 393258, 0, 0, 458753, -1610612734, 0, 458754, -1610612734, 0, 458755, -1610612734, 0, 458756, -1610612734, 0, 458757, -1610612734, 0, 458758, -1610612734, 0, 458759, -1610612734, 0, 458760, -1610612734, 0, 458761, -1610612734, 0, 458762, -1610612734, 0, 458763, -1610612734, 0, 458764, -1610612734, 0, 458765, -1610612734, 0, 458766, -1610612734, 0, 458767, -1610612734, 0, 458768, -1610612734, 0, 458769, -1610612734, 0, 458770, -1610612734, 0, 458771, -1073741822, 0, 458772, -1073741822, 0, 458773, -1073741822, 0, 458774, -1073741822, 0, 458775, -1073741822, 0, 458776, -1073741822, 0, 458777, -1073741822, 0, 458778, -1073741822, 0, 458779, -1073741822, 0, 458780, -1073741822, 0, 458781, -1073741822, 0, 458782, -1073741822, 0, 458783, -1073741822, 0, 458784, -1073741822, 0, 458785, -1073741822, 0, 458786, -1073741822, 0, 458787, -1073741822, 0, 458788, -1073741822, 0, 458789, -1073741822, 0, 458790, -1073741822, 0, 458791, -1073741822, 0, 458792, -1073741822, 0, 458793, -1073741822, 0, 458794, -1610612734, 0 )
 
 [node name="goback1" type="Area2D" parent="."]
 position = Vector2( 150.169, 402.927 )
@@ -158,5 +376,57 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="finaldoor"]
 shape = SubResource( 7 )
-[connection signal="body_entered" from="goback1" to="Player" method="_on_goback1_body_entered"]
-[connection signal="body_entered" from="finaldoor" to="Player" method="_on_finaldoor_body_entered"]
+
+[node name="Player1" type="KinematicBody2D" parent="."]
+position = Vector2( 261.629, 421.809 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player1"]
+frames = SubResource( 30 )
+animation = "Stand"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
+shape = SubResource( 31 )
+
+[node name="Camera2D" type="Camera2D" parent="Player1"]
+current = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player1"]
+position = Vector2( -261.629, -421.809 )
+stream = ExtResource( 13 )
+volume_db = -15.0
+autoplay = true
+
+[node name="Boss" type="KinematicBody2D" parent="."]
+position = Vector2( 1540.7, 352.689 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 12 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Boss"]
+frames = SubResource( 50 )
+animation = "Walk"
+frame = 4
+
+[node name="Tween" type="Tween" parent="Boss"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss"]
+shape = SubResource( 51 )
+
+[node name="Area2D" type="Area2D" parent="Boss"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/Area2D"]
+shape = SubResource( 52 )
+
+[node name="Area2D2" type="Area2D" parent="Boss"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/Area2D2"]
+position = Vector2( -32.6663, 38.6056 )
+rotation = 1.5708
+shape = SubResource( 53 )
+[connection signal="body_entered" from="goback1" to="Player1" method="_on_goback1_body_entered"]
+[connection signal="body_entered" from="finaldoor" to="Player1" method="_on_finaldoor_body_entered"]
+[connection signal="body_entered" from="Boss/Area2D" to="Boss" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Boss/Area2D2" to="Boss" method="_on_Area2D2_body_entered"]

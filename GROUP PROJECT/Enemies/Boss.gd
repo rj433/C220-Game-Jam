@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-export var constraint_left = Vector2(1640,290)
-export var constraint_right = Vector2(1870,290)
-export var speed = 5
+export var constraint_left = Vector2(1540,356)
+export var constraint_right = Vector2(2318,356)
+export var speed = 10
 onready var _animated_sprite = $AnimatedSprite
 
 
@@ -27,3 +27,10 @@ func _on_Area2D_body_entered(body):
 		get_tree().reload_current_scene()
 			
 		
+
+
+func _on_Area2D2_body_entered(body):
+	if body.name == "Player1": 
+		_animated_sprite.play("Attack")
+	else:
+		_animated_sprite.play("Walk")
