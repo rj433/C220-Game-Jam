@@ -43,7 +43,7 @@ Assets collecting, Dialogue writing, and other aesthetic implementations by Haye
 
 ## Future Development
 
-# Created by: Group Name
+# Created by: KRHJ 
 ## -Ryan Janoski 
   -Music, enemies, dialogue window/coding, and boss
 ## -Jalen Slutzky 
