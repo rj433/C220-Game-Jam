@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_042.png" type="Texture" id=1]
 [ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_061.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Player/Player1.gd" type="Script" id=5]
 [ext_resource path="res://Background.jpg" type="Texture" id=6]
 [ext_resource path="res://assets/Music/Ghost's theme.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Dialogue3.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/icons/armor5.png" type="Texture" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 75, 0, 75, 76, 0, 76 )
@@ -85,100 +87,100 @@ points = PoolVector2Array( 0, 0, 72, 0, 72, 88, 0, 88 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 2.29228, 33.7157 )
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 230, 0, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=17]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 46, 50 )
-
-[sub_resource type="AtlasTexture" id=18]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 276, 0, 46, 50 )
-
-[sub_resource type="AtlasTexture" id=19]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 0, 100, 46, 50 )
-
-[sub_resource type="AtlasTexture" id=20]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 46, 100, 46, 50 )
-
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 0, 150, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=9]
 flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 46, 150, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=10]
 flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 92, 150, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=11]
 flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 138, 150, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=25]
+[sub_resource type="AtlasTexture" id=12]
 flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 184, 150, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=13]
 flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 230, 150, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=14]
 flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 276, 150, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=15]
 flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 322, 150, 46, 50 )
 
-[sub_resource type="SpriteFrames" id=30]
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 276, 0, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 100, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 46, 100, 46, 50 )
+
+[sub_resource type="SpriteFrames" id=20]
 animations = [ {
-"frames": [ SubResource( 27 ), SubResource( 16 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
 "name": "Stand",
 "speed": 2.0
 }, {
-"frames": [ SubResource( 17 ), SubResource( 18 ) ],
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 16 ), SubResource( 17 ) ],
 "loop": true,
 "name": "Jump",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 19 ), SubResource( 20 ) ],
+"frames": [ SubResource( 18 ), SubResource( 19 ) ],
 "loop": true,
 "name": "Fall",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 28 ), SubResource( 29 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=31]
+[sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 25, 25 )
 
 [node name="Keyroom3" type="Node2D"]
@@ -212,11 +214,11 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player1"]
-frames = SubResource( 30 )
+frames = SubResource( 20 )
 animation = "Stand"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
-shape = SubResource( 31 )
+shape = SubResource( 21 )
 
 [node name="Camera2D" type="Camera2D" parent="Player1"]
 current = true
@@ -225,4 +227,15 @@ current = true
 stream = ExtResource( 7 )
 volume_db = -15.0
 autoplay = true
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 1076.94, 483.921 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 9 )
+
+[node name="Control" parent="." instance=ExtResource( 8 )]
+margin_left = 16.4814
+margin_top = 119.865
+margin_right = 16.4814
+margin_bottom = 119.865
 [connection signal="body_entered" from="backdoor3" to="Player1" method="_on_backdoor3_body_entered"]

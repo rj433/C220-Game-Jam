@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_067.png" type="Texture" id=1]
 [ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_042.png" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Player/Player1.gd" type="Script" id=6]
 [ext_resource path="res://Background.jpg" type="Texture" id=7]
 [ext_resource path="res://assets/Music/Ghost's theme.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Dialogue2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/icons/armor2.png" type="Texture" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 77, 0, 77, 87, 0, 87 )
@@ -110,15 +112,55 @@ points = PoolVector2Array( 0, 0, 74, 0, 74, 81, 0, 81 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 3.6683, 30.0282 )
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 230, 0, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 46, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 92, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 138, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 184, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 230, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 276, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 322, 150, 46, 50 )
 
 [sub_resource type="AtlasTexture" id=17]
 flags = 4
@@ -140,52 +182,17 @@ flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 46, 100, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=21]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 0, 150, 46, 50 )
-
-[sub_resource type="AtlasTexture" id=22]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 46, 150, 46, 50 )
-
-[sub_resource type="AtlasTexture" id=23]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 92, 150, 46, 50 )
-
-[sub_resource type="AtlasTexture" id=24]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 138, 150, 46, 50 )
-
-[sub_resource type="AtlasTexture" id=25]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 184, 150, 46, 50 )
-
-[sub_resource type="AtlasTexture" id=26]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 230, 150, 46, 50 )
-
-[sub_resource type="AtlasTexture" id=28]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 276, 150, 46, 50 )
-
-[sub_resource type="AtlasTexture" id=29]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 322, 150, 46, 50 )
-
-[sub_resource type="SpriteFrames" id=30]
+[sub_resource type="SpriteFrames" id=21]
 animations = [ {
-"frames": [ SubResource( 27 ), SubResource( 16 ) ],
+"frames": [ SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "Stand",
 "speed": 2.0
+}, {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 5.0
 }, {
 "frames": [ SubResource( 17 ), SubResource( 18 ) ],
 "loop": true,
@@ -196,14 +203,9 @@ animations = [ {
 "loop": true,
 "name": "Fall",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 28 ), SubResource( 29 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=31]
+[sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 25, 25 )
 
 [node name="Keyroom2" type="Node2D"]
@@ -236,11 +238,11 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player1"]
-frames = SubResource( 30 )
+frames = SubResource( 21 )
 animation = "Stand"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
-shape = SubResource( 31 )
+shape = SubResource( 22 )
 
 [node name="Camera2D" type="Camera2D" parent="Player1"]
 current = true
@@ -249,4 +251,15 @@ current = true
 stream = ExtResource( 8 )
 volume_db = -15.0
 autoplay = true
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 1074.01, 267.571 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 10 )
+
+[node name="Control" parent="." instance=ExtResource( 9 )]
+margin_left = -134.03
+margin_top = 52.8569
+margin_right = -134.03
+margin_bottom = 52.8569
 [connection signal="body_entered" from="backdoor2" to="Player1" method="_on_backdoor2_body_entered"]

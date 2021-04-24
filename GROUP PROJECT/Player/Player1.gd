@@ -11,6 +11,10 @@ var player1 = "Player1"
 var motion = Vector2.ZERO
 
 
+
+
+	
+	
 func _physics_process(_delta):
 	var x_input = Input.get_action_strength("right") - Input.get_action_strength("left")
 	if x_input != 0:
@@ -98,5 +102,6 @@ func _on_goback2_body_entered(body):
 	get_tree().change_scene("res://Bossroom.tscn")
 
 
-func _on_Dialogue_hitbox_body_entered(body):
-	print("Hello")
+
+
+	
