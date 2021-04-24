@@ -10,11 +10,16 @@ Game Jam for MSCH-C220, April 2021
   -Pushing branches back to github and resolving conflicts proved to be confusing
 
 ## Implementation
+
 Music, enemies, dialogue window, and boss designed by Ryan Janoski 
+
 Level Design, and character development by Jalen Slutzky
+
 Character design by Kraig Foster 
+
 Assets collecting, Dialogue writing, and other aesthetic implementations by Hayes Snider
-  -Assets used 
+
+-Assets used 
    -https://opengameart.org/content/gui-dialoguemenu-box (used for dialogue box background)
    
    -https://fonts.google.com/specimen/Roboto (used for font for dialogue box)
