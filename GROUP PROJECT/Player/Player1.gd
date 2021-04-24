@@ -9,7 +9,7 @@ const GRAVITY = 500
 const JUMP_FORCE = 505
 var player1 = "Player1"
 var motion = Vector2.ZERO
-
+var Player1keys = Global.Player1keys
 
 
 
@@ -27,7 +27,7 @@ func _physics_process(_delta):
 		$AnimatedSprite.flip_h = true
 	if Input.is_action_just_pressed("right"):
 		$AnimatedSprite.flip_h = false
-	
+	Player1keys = min(Player1keys,3)
 	motion.y += GRAVITY * _delta 
 	
 	if is_on_floor():
@@ -56,6 +56,7 @@ func _physics_process(_delta):
 
 func _on_leveldoor1_body_entered(body):
 	get_tree().change_scene("res://Level2.tscn")
+
 
 
 func _on_keydoor1_body_entered(body):
@@ -105,3 +106,8 @@ func _on_goback2_body_entered(body):
 
 
 	
+
+
+func _on_level3door_body_entered(body):
+	if body.name == "Player1":
+		get_tree().change_scene("res://Bossroom.tscn")

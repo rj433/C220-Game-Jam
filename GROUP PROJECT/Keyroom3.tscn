@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_042.png" type="Texture" id=1]
 [ext_resource path="res://platformer-pack-medieval/PNG/medievalTile_061.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://assets/Music/Ghost's theme.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Dialogue3.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/icons/armor5.png" type="Texture" id=9]
+[ext_resource path="res://Keys/Key_container3.gd" type="Script" id=10]
+[ext_resource path="res://assets/Dialogue pointer, key/platformPack_item014.png" type="Texture" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 75, 0, 75, 76, 0, 76 )
@@ -238,4 +240,17 @@ margin_left = 16.4814
 margin_top = 119.865
 margin_right = 16.4814
 margin_bottom = 119.865
+
+[node name="Key_container" type="Area2D" parent="."]
+position = Vector2( 966.408, 528.902 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Key_container"]
+texture = ExtResource( 11 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Key_container"]
+polygon = PoolVector2Array( -1, -16.8, -1, -14.7, 2.9, -10, 19.5, -10, 23, -8.2, 23, -6.8, 26, -3.8, 26, 6, 24.5, 6, 20.5, 19, 3, 19, 0, 15, -4.2, 19, -14.5, 19, -18, 17.2, -18, 15.9, -25, 9.9, -25, 6, -26.2, -7, -25, -7, -25, -10, -22.7, -10, -16, -15.9, -16, -18.2 )
 [connection signal="body_entered" from="backdoor3" to="Player1" method="_on_backdoor3_body_entered"]
